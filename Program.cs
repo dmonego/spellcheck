@@ -38,6 +38,10 @@ namespace spellcheck
 
         static void Main(string[] args)
         {
+            if(args.Length < 1) {
+                Console.Out.WriteLine("Usage: spellcheck <word>");
+                return;
+            }
             string word = args[0];
             HashSet<string> dictionary = getWords();
             if(dictionary.Contains(word)) {
